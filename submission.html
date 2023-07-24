@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>Submit a Review</title>
+  </head>
+  <body>
+    <header>
+      <h1>Submit a Review</h1>
+      <nav>
+        <ol>
+          <li><a href = "./index.html">Home</a></li>
+          <li><a href = "./submission.html">Submit a Review</a></li>
+        </ol>
+      </nav>
+    </header>
+    <section id = "review_form">
+      <form action = "./form_processing.html" method = "POST">
+        <section id = "name_section">
+          <label for = "name">Name:</label>
+          <input id = "name" name = "name" type = "text" minlength = "2" maxlength = "15" required>
+        </section>
+        <br>
+        <section id = "course_section">
+          <label for = "course">Which course are you reviewing?</label>
+          <input id = "course" name = "course" type = "text" list = "course_options" required>
+          <datalist id = "course_options">
+            <option value = "codecademy">Codecademy</option>
+            <option value = "udemy">Udemy</option>
+            <option value = "w3schools">W3Schools</option>
+          </datalist>
+        </section>
+        <br>
+        <section id = "rating_section">
+          <label for = "rating">Rating (0-5):</label>
+          <input id = "rating" name = "rating" type = "text" pattern = "[0-5]{1}" required>
+        </section>
+        <br>
+        <section id = "comments_section">
+          <label for = "comments">Comments:</label>
+          <br>
+          <textarea id = "comments" name = "comments" rows = "10" cols = "40" ></textarea>
+        </section>
+        <br>
+        <br>
+        <section id = "submit_section">
+          <label for = "submit">Submit Review:</label>
+          <input id = "submit" type = "submit">
+        </section>
+      </form>
+    </section>
+  </body>
+</html>
