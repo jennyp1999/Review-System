@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel = "stylesheet" href = "style.css">
     <title>HTML Course Reviews</title>
+    <script>
+      
+      function hello(event){
+        let name = document.getElementById("name")
+        console.log(name)
+        window.event.preventDefault()
+        alert(name.value)
+        return false
+      }
+
+    </script>
   </head>
   <body>
     <header>
@@ -14,24 +25,39 @@
         </ol>
       </nav>
     </header>
+    <br>
     <section id = "reviews">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Link</th>
-            <th>Rating</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Codecademy HTML</td>
-            <td><a href = "https://www.codecademy.com/learn/learn-html">Find the Codecademy course here</a></td>
-            <td></td>
-          </tr>
-          
-        </tbody>
-      </table>
+      <section id = "table_section">
+        <table id = "review_table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Link</th>
+              <th>Average Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Codecademy HTML</td>
+              <td><a href = "https://www.codecademy.com/learn/learn-html">Find the Codecademy course here</a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Udemy HTML</td>
+              <td><a 
+              href = "https://www.udemy.com/course/master-the-basics-of-html5-css3-beginner-web-development/">Find the Udemy course here</a>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>W3Schools HTML</td>
+              <td><a href = "https://www.codecademy.com/learn/learn-html">Find the Codecademy course here</a>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
       <section id = "codecademy">
         <h2>Codecademy Reviews</h2>
         <a href = "https://www.codecademy.com/learn/learn-html">Find the Codecademy course here</a>
@@ -45,5 +71,68 @@
         <a href = "https://www.w3schools.com/html/default.asp">Find the W3Schools course here</a>
       </section>
     </section>
+    <br>
+    <section id = "add">
+      <h1>Submit a Review</h1>
+      <br>
+      <form onsubmit = "return false;">
+        <section id = "name_section">
+          <label for = "name">Name:</label>
+          <input id = "name" name = "name" type = "text" minlength = "2" maxlength = "15" required>
+        </section>
+        <br>
+        <section id = "course_section">
+          <label for = "course">Which course are you reviewing?</label>
+          <input id = "course" name = "course" type = "text" list = "course_options" required>
+          <datalist id = "course_options">
+            <option value = "codecademy">Codecademy</option>
+            <option value = "udemy">Udemy</option>
+            <option value = "w3schools">W3Schools</option>
+          </datalist>
+        </section>
+        <br>
+        <section id = "rating_section">
+          <label for = "rating">Rating (0-5):</label>
+          <input id = "rating" name = "rating" type = "text" pattern = "[0-5]{1}" required>
+        </section>
+        <br>
+        <section id = "comments_section">
+          <label for = "comments">Comments:</label>
+          <textarea id = "comments" name = "comments" rows = "10" cols = "40" ></textarea>
+        </section>
+        <br>
+        <br>
+        <section id = "submit_section">
+          <label for = "submit">Submit Review:</label>
+          <button type = "button" id = "submit" onclick = "hello(event)">Submit</button>
+        </section>
+      </form>
+    </section>
   </body>
+  <script>
+    const course1 = {name:"Course Name", link:"linky", rating:5};
+      const course2 = {name:"Course Name2", link:"linky", rating:5};
+      var courses = [course1, course2]
+
+      function addrow(name,link,rating){
+       // Find a <table> element with id="myTable":
+var table = document.getElementById("review_table");
+
+// Create an empty <tr> element and add it to the 1st position of the table:
+var row = table.insertRow(-1);
+
+// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+var cell3 = row.insertCell(2);
+
+// Add some text to the new cells:
+cell1.innerHTML = name;
+cell2.innerHTML = link; 
+cell3.innerHTML = rating;
+      }
+
+addrow("codecademy", "codecademy.com", "5 stars")
+
+  </script>
 </html>

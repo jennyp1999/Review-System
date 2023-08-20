@@ -1,0 +1,120 @@
+/* Background colour, text colour, font */
+html {
+  background-color: rgba(6, 4, 32, 0.854);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Nav bar */
+/* Sets nav links to be side by side */
+li{
+  display: inline;
+}
+
+/* Sets the background colour of entire nav bar (doing so above would just set the link background colour) */
+ol{
+  background-color: rgb(0, 0, 29);
+}
+
+/* Remove underline from nav links, set the links's text colour to white, separate the two links */
+li a{
+  text-decoration: none;
+  color: white;
+  padding: 0% 20% 0% 20%;
+}
+
+/* Hover change */
+li a:hover{
+  background-color: grey;
+}
+
+/* Click change */
+li a:active{
+  background-color:rgb(0, 0, 29);
+}
+
+
+
+/* Moving everything over a bit */
+body{
+  padding: 0% 10%;
+}
+
+
+
+/* Centering section titles and adding font size */
+h1{
+  text-align: center;
+  font-size: 2em;
+}
+
+
+
+/* Table */
+/* Adding lower border to table headings */
+th{
+  border-bottom: 2px solid white;
+}
+
+/* Removing gaps between table borders to ensure the visible lower border is continuous */
+table{
+  border-collapse: collapse;
+}
+
+/* Adding spacing into the table */
+td,th{
+  padding:10px;
+}
+
+/* Centering table */
+#table_section{
+  padding: 0% 20%;
+}
+
+
+
+
+
+/* Form Styling */
+/* Setting background and text colour of form inputs */
+input,textarea{
+  background-color:rgb(0, 0, 29); 
+  color: white;
+}
+
+/* Ensuring the comments label aligns with the top of the text area form input, also setting input position */
+#comments_section label{
+  vertical-align: top;
+  padding-right: 16.5%;
+}
+
+/* Aligning each form input individually (comment box aligned above) */
+[for = "name"]{
+  padding-right: 20%;
+}
+
+[for = "course"]{
+  padding-right: 1%;
+}
+
+[for = "rating"]{
+  padding-right: 15.75%;
+}
+
+/* Styling button */
+button{
+  background-color:rgb(0, 0, 29);
+  color: white;
+  vertical-align: center;
+  font-size: 1em;
+  padding: 10px 25px 5px 25px;
+}
+
+#submit_section label{
+  vertical-align: middle;
+}
+
+
+
